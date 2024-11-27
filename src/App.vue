@@ -31,7 +31,7 @@ const generateRandomData = () => {
   games.value.forEach((game) => {
     data[game.id] = Array(12)
       .fill(0)
-      .map(() => Math.floor(Math.random() * 10000) + 1000);
+      .map(() => Math.floor(Math.random() * (2000 - 300 + 1)) + 300);
   });
   return data;
 };
@@ -87,7 +87,7 @@ const addNewGame = () => {
 
   salesData.value[newGameId] = Array(12)
     .fill(0)
-    .map(() => Math.floor(Math.random() * 10000) + 1000);
+    .map(() => Math.floor(Math.random() * (2000 - 300 + 1)) + 300);
 
   newGameName.value = "";
   newGameError.value = "";
@@ -307,7 +307,7 @@ const handleResize = () => {
 
 <template>
   <div class="container mt-4">
-    <h2 class="text-center mb-4">遊戲銷售儀表板</h2>
+    <h2 class="text-center mb-4">遊戲價格趨勢儀表板</h2>
 
     <div class="row mb-4">
       <div class="col-md-6">
